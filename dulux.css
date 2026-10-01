@@ -982,6 +982,932 @@ body {
     transform: scale(1.08);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
+/* =====================================================
+   ORDER IN dulux.css (bottom of the file):
+   1. @media (max-width: 1024px)   <- Part 1, goes FIRST
+   2. @media (max-width: 768px)    <- mobile-768.css
+   3. @media (max-width: 480px)    <- Part 2
+   4. @media (max-width: 360px)    <- Part 3, goes LAST
+   ===================================================== */
+
+
+/* =====================================================
+   PART 1: TABLET / SMALL LAPTOP  (paste ABOVE the 768px block)
+   Layout stays desktop-style, just tighter.
+   ===================================================== */
+@media (max-width: 1024px) {
+
+    /* ---------- Navbar ---------- */
+    .logo {
+        margin-right: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .navicons {
+        padding: 0 16px;
+    }
+
+    /* ---------- Product discovery dropdown ---------- */
+    .discovery-panel {
+        left: 16px;
+        right: 16px;
+        padding: 20px 24px;
+    }
+
+    .discovery-content {
+        gap: 20px;
+    }
+
+    .discovery-item h3 {
+        font-size: 16px;
+    }
+
+    .discovery-item img {
+        height: 130px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        width: 100%;
+        height: 550px;
+    }
+
+    /* ---------- Dulux promise ---------- */
+    .dulux-promise {
+        max-width: 95%;
+    }
+
+    .promise-content {
+        padding: 35px 30px;
+    }
+
+    .promise-content h2 {
+        font-size: 32px;
+    }
+
+    /* ---------- Shop by colours ---------- */
+    .shop-colours {
+        padding: 40px 24px;
+    }
+
+    .shop-colours-heading h2 {
+        font-size: 40px;
+    }
+
+    .shop-colours-heading p {
+        margin: 0 40px;
+    }
+
+    /* ---------- Category cards: 2 columns, last card full width ---------- */
+    .category-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    /* ---------- Hot products ---------- */
+    .hot-product-headers-contents {
+        gap: 80px;
+    }
+
+    .product {
+        margin-right: 0;
+    }
+
+    /* ---------- Inspiration ---------- */
+    .inspiration-cards {
+        margin-left: 30px;
+        margin-right: 30px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+    }
+
+    .inspiration-card {
+        min-width: 240px;
+        scroll-snap-align: start;
+    }
+
+    /* ---------- Colour quiz (still side by side) ---------- */
+    .colour-quiz {
+        width: 92%;
+        height: auto;
+    }
+
+    .quiz-image {
+        flex: 1.2;
+        min-width: 0;
+    }
+
+    .quiz-image img {
+        display: block;
+        width: 100%;
+        height: 420px;
+    }
+
+    .quiz-content {
+        flex: 1;
+        width: auto;
+        height: 420px;
+        max-height: none;
+        padding: 36px 28px;
+    }
+
+    .quiz-content h2 {
+        font-size: 28px;
+    }
+
+    .quiz-content p {
+        font-size: 16px;
+    }
+
+    .quiz-content button {
+        margin-top: 90px;
+    }
+
+    /* ---------- Find store + consultation ---------- */
+    .help-section {
+        padding: 50px 0;
+    }
+
+    .store-section,
+    .consultation-section {
+        width: 92%;
+    }
+
+    .store-content {
+        left: 40px;
+        padding: 32px;
+    }
+
+    .consultation-content {
+        right: 40px;
+        padding: 28px;
+    }
+
+    .consultation-content p {
+        padding-right: 20px;
+    }
+}
+
+
+
+
+/* ===== 768px (corrected) =====
+   Replaces BOTH of your existing @media (max-width: 768px) blocks
+   (the small WhatsApp one and the big one). Same HTML, same structure. */
+@media (max-width: 768px) {
+
+    /* ---------- WhatsApp button ---------- */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+        height: 80px;
+        padding: 0 16px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo {
+        width: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo img {
+        width: 88px;
+        height: 66px;
+        object-fit: cover;
+    }
+
+    .navicons {
+        margin: 0 0 0 auto;      /* pushes icons to the right (was margin-right: 800px) */
+        padding: 0;
+        gap: 8px;
+    }
+
+    .icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .ham {
+        display: block;
+        width: 28px;
+        height: 26px;
+        cursor: pointer;
+        margin-left: 4px;
+    }
+
+    /* ---------- Hero slideshow ---------- */
+    .hero {
+        width: 100%;
+        height: 380px;
+        margin: 0;
+    }
+
+    /* ---------- Dulux promise ---------- */
+    .dulux-promise {
+        width: 100%;
+        max-width: 40rem;
+        flex-direction: column-reverse;
+        margin: 30px auto;
+        padding: 1.25rem;
+    }
+
+    .promise-content {
+        width: 100%;
+        padding: 50px 20px;
+        border-radius: 14px 0 14px 14px;
+    }
+
+    .promise-image {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .promise-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .promise-content h2 {
+        font-size: 24px;
+        margin: 0 0 16px;
+    }
+
+    .promise-content>h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+        color: #5a5c5d;
+    }
+
+    .promise-content>p {
+        font-size: 16px;
+        color: #5a5c5d;
+        margin-bottom: 25px;
+    }
+
+    .promise-box {
+        padding: 16px;
+        margin: 0 0 12px;
+    }
+
+    .promise-box h3 {
+        margin: 0 0 4px;
+        color: #1b1d1e;
+        font-size: 20px;
+    }
+
+    .promise-box p {
+        font-size: 16px;
+        color: #5a5c5d;
+    }
+
+    .promise-icon {
+        flex-shrink: 0;
+        width: 45px;
+        height: 40px;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    /* ---------- Shop by colours ---------- */
+    .shop-colours {
+        padding: 40px 16px;
+    }
+
+    .shop-colours-heading h2 {
+        padding-top: 0;
+        text-align: center;
+        margin-bottom: 16px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .shop-colours-heading p {
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* 9 colours = a clean 3 x 3 grid, so no last-child hack needed */
+    .colour-list {
+        display: grid;
+        grid-template-columns: repeat(3, 76px);
+        justify-content: center;
+        gap: 4px 16px;
+        margin-top: 16px;
+    }
+
+    .colour-card {
+        width: 76px;
+        height: 76px;
+        margin: 16px 0 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .colour,
+    .colours {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* full-width blue bar at the bottom of the section */
+    .shop-colours-button {
+        margin: 40px -16px -40px;
+        height: auto;
+        background-color: transparent;
+    }
+
+    .shop-colours-button div {
+        width: 100%;
+        margin: 0;
+        padding: 22px 16px;
+        line-height: normal;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    /* ---------- Category cards ---------- */
+    .category-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 24px;
+    }
+
+    /* ---------- Hot products ---------- */
+    .hot-product-headers-contents {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .product {
+        display: flex;
+        justify-content: center;
+        margin: 24px 0 8px;
+    }
+
+    .products {
+        gap: 30px;
+    }
+
+    .all-product-btn {
+        margin: 8px 0 0;
+    }
+
+    .explore-product {
+        text-align: center;
+    }
+
+    /* ---------- Inspiration ---------- */
+    .inspiration {
+        padding: 48px 0;
+    }
+
+    .inspiration h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 32px;
+    }
+
+    .inspiration-cards {
+        margin: 0 16px;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 8px;
+    }
+
+    .inspiration-card {
+        flex: 0 0 auto;
+        width: 78%;
+        height: 260px;
+        scroll-snap-align: start;
+    }
+
+    .inspiration-card:last-child {
+        margin-right: 16px;
+    }
+
+    /* ---------- Colour quiz ---------- */
+    .colour-quiz {
+        width: calc(100% - 32px);
+        height: auto;
+        flex-direction: column;
+        margin: 30px auto;
+        border-radius: 12px;
+    }
+
+    .quiz-image img {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .quiz-content {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        padding: 24px 20px 28px;
+    }
+
+    .quiz-content h2 {
+        font-size: 22px;
+        margin: 0 0 10px;
+    }
+
+    .quiz-content p {
+        font-size: 15px;
+    }
+
+    .quiz-content button {
+        margin-top: 24px;
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    /* ---------- Find store + consultation ---------- */
+    .help-section {
+        padding: 40px 16px;
+    }
+
+    .store-section,
+    .consultation-section {
+        width: 100%;
+        height: auto;            /* was -6px (invalid) */
+        padding: 0;              /* was padding-bottom: 70px (extra white space) */
+        margin: 0 0 20px;
+        border-radius: 12px;
+    }
+
+    .consultation-section {
+        margin-bottom: 0;
+    }
+
+    .store-content,
+    .consultation-content {
+        top: 50%;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        width: 88%;
+        max-width: 88%;
+        padding: 32px 24px;
+    }
+
+    .store-content h2,
+    .consultation-content h2 {
+        font-size: 22px;
+        color: #1b1d1e;
+        margin: 0 0 12px;
+    }
+
+    .store-content p,
+    .consultation-content p {
+        font-size: 15px;
+        color: #1b1d1e;
+    }
+
+    .consultation-content p {
+        padding: 0;
+        margin: 0 0 20px;
+    }
+
+    .responsiveness-image {
+        background-image: url(image/find-retail-bg-sm-CTZzZLQf.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 480px;
+        width: 100%;
+    }
+
+    .responsive-image {
+        background-image: url(image/bookconsultationMobile-Clc8TZQa.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        height: 480px;
+        width: 100%;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        height: auto;
+        margin: 0;
+        padding: 32px 16px 40px;
+        background: #ffffff;
+    }
+
+    .footer img {
+        width: 88px;
+        height: 64px;
+        margin: 0;
+        object-fit: contain;
+        cursor: pointer;
+    }
+
+    .social-icons {
+        height: 40px;
+        margin: 20px 0;
+    }
+
+    .footer p {
+        font-size: 12px;
+        color: #022a68;
+    }
+}
+
+/* =====================================================
+   PART 2: LARGE PHONES  (paste BELOW the 768px block)
+   ===================================================== */
+@media (max-width: 480px) {
+
+    /* ---------- WhatsApp ---------- */
+    .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        bottom: 16px;
+        right: 16px;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo img {
+        width: 72px;
+        height: 54px;
+    }
+
+    .navicons {
+        gap: 6px;
+    }
+
+    .icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        height: 320px;
+    }
+
+    /* ---------- Dulux promise ---------- */
+    .dulux-promise {
+        padding: 1rem;
+    }
+
+    .promise-content {
+        padding: 36px 16px;
+    }
+
+    .promise-content h2 {
+        font-size: 22px;
+    }
+
+    .promise-box {
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .promise-box h3 {
+        font-size: 18px;
+    }
+
+    .promise-box p {
+        font-size: 14px;
+    }
+
+    /* ---------- Shop by colours ---------- */
+    .shop-colours {
+        padding: 32px 14px;
+    }
+
+    .shop-colours-heading h2 {
+        font-size: 24px;
+    }
+
+    .shop-colours-heading p {
+        font-size: 13px;
+    }
+
+    .colour-list {
+        grid-template-columns: repeat(3, 68px);
+        gap: 4px 12px;
+    }
+
+    .colour-card {
+        width: 68px;
+        height: 68px;
+    }
+
+    .colour,
+    .colours {
+        width: 58px;
+        height: 58px;
+    }
+
+    .shop-colours-button {
+        margin: 32px -14px -32px;
+    }
+
+    /* ---------- Category cards ---------- */
+    .category-cards {
+        padding: 30px 16px;
+    }
+
+    .category-card {
+        height: 280px;
+    }
+
+    .category-card-content h2 {
+        font-size: 24px;
+    }
+
+    .category-btn {
+        padding: 14px 18px;
+    }
+
+    /* ---------- Hot products ---------- */
+    .product h3 {
+        font-size: 26px;
+    }
+
+    .products {
+        gap: 24px;
+        font-size: 16px;
+    }
+
+    /* ---------- Inspiration ---------- */
+    .inspiration {
+        padding: 40px 0;
+    }
+
+    .inspiration h2 {
+        font-size: 1.6rem;
+    }
+
+    .inspiration-cards {
+        margin: 0 12px;
+    }
+
+    .inspiration-card {
+        width: 85%;
+        height: 240px;
+    }
+
+    /* ---------- Colour quiz ---------- */
+    .colour-quiz {
+        width: calc(100% - 24px);
+        margin: 24px auto;
+    }
+
+    .quiz-image img {
+        height: 180px;
+    }
+
+    .quiz-content {
+        padding: 20px 16px 24px;
+    }
+
+    .quiz-content h2 {
+        font-size: 20px;
+    }
+
+    /* ---------- Find store + consultation ---------- */
+    .help-section {
+        padding: 32px 12px;
+    }
+
+    .responsiveness-image,
+    .responsive-image {
+        height: 500px;
+    }
+
+    .store-content,
+    .consultation-content {
+        padding: 28px 18px;
+    }
+
+    .store-content h2,
+    .consultation-content h2 {
+        font-size: 20px;
+    }
+
+    .store-content p,
+    .consultation-content p {
+        font-size: 14px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        padding: 28px 12px 32px;
+    }
+
+    .footer p {
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   PART 3: SMALL PHONES  (paste at the VERY BOTTOM)
+   ===================================================== */
+@media (max-width: 360px) {
+
+    /* ---------- WhatsApp ---------- */
+    .whatsapp-float {
+        width: 46px;
+        height: 46px;
+        bottom: 14px;
+        right: 14px;
+    }
+
+    /* ---------- Navbar ---------- */
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: 64px;
+        height: 48px;
+    }
+
+    .navicons {
+        gap: 5px;
+    }
+
+    .icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .ham {
+        width: 24px;
+        margin-left: 2px;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        height: 260px;
+    }
+
+    /* ---------- Dulux promise ---------- */
+    .dulux-promise {
+        padding: 0.75rem;
+    }
+
+    .promise-content {
+        padding: 28px 14px;
+    }
+
+    .promise-content h2 {
+        font-size: 20px;
+    }
+
+    .promise-box h3 {
+        font-size: 17px;
+    }
+
+    .promise-icon {
+        width: 40px;
+        height: 38px;
+    }
+
+    /* ---------- Shop by colours ---------- */
+    .shop-colours-heading h2 {
+        font-size: 22px;
+    }
+
+    .colour-list {
+        grid-template-columns: repeat(3, 60px);
+        gap: 4px 8px;
+    }
+
+    .colour-card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .colour,
+    .colours {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* ---------- Category cards ---------- */
+    .category-card {
+        height: 250px;
+    }
+
+    .category-card-content h2 {
+        font-size: 22px;
+    }
+
+    .category-btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+    /* ---------- Hot products ---------- */
+    .product h3 {
+        font-size: 24px;
+    }
+
+    .products {
+        gap: 18px;
+        font-size: 15px;
+    }
+
+    /* ---------- Inspiration ---------- */
+    .inspiration-card {
+        width: 90%;
+        height: 220px;
+    }
+
+    .card-content h3 {
+        font-size: 16px;
+    }
+
+    .card-content button {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+
+    /* ---------- Colour quiz ---------- */
+    .quiz-image img {
+        height: 160px;
+    }
+
+    .quiz-content h2 {
+        font-size: 19px;
+    }
+
+    .quiz-content button {
+        padding: 14px 0;
+    }
+
+    /* ---------- Find store + consultation ---------- */
+    .responsiveness-image,
+    .responsive-image {
+        height: 520px;
+    }
+
+    .store-content,
+    .consultation-content {
+        padding: 24px 16px;
+    }
+
+    .store-content h2,
+    .consultation-content h2 {
+        font-size: 19px;
+    }
+
+    .store-content button,
+    .consultation-content button {
+        padding: 14px 24px;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer p {
+        font-size: 10.5px;
+    }
+}
 
 @media (max-width: 768px) {
     .whatsapp-float {
@@ -1004,397 +1930,4 @@ body {
 
 .footer p span {
     margin: 0 8px;
-}
-
-@media (max-width: 768px) {
-
-    * {
-        box-sizing: border-box;
-    }
-
-    .hero {
-        width: 100%;
-        margin: 0;
-        position: static;
-        overflow-x: hidden;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .logo {
-        width: 80px;
-        /* margin-left: 30px; */
-        margin-bottom: -35px;
-      padding-right: 100px;
-
-    }
-
-    .logo img {
-        width: 80px;
-       object-fit: cover;
-       height: 66px;
-       width: 88px;
-    
-    }
-
-    .navbar {
-        height: 80px;
-        padding: 0 20px;
-        display: flex;
-        flex-direction: row;
-    }
-    .navicons{
-        margin-bottom: -25px;
-        margin-right: 800px;
-    }
-
-    .ham {
-        display: block;
-        width: 28px;
-        height: 26px;
-        cursor: pointer;
-        margin-left: auto;
-    }
-
-    .dulux-promise {
-        width: 100%;
-        border-top-left-radius: ;
-        display: flex;
-        padding-right: 13px;
-        padding-left: 13px;
-        padding: 1.25rem;
-
-        flex-direction: column-reverse;
-        margin: 30px 0;
-        /* border-bottom-left-radius: 14px; */
-        max-width: 40rem;
-    }
-
-    .promise-content {
-        width: 100%;
-        padding: 30px 20px;
-        border-radius: 0;
-        border-top-left-radius: 14px;
-        border-bottom-left-radius: 14px;
-        border-bottom-right-radius: 14px;
-        padding: -1.25rem;
-        padding-bottom: 50px;
-        padding-top: 50px;
-        /* background-color: red; */
-    }
-
-    .promise-image {
-        width: 100%;
-        border-radius: 0;
-    }
-
-    .promise-image img {
-        width: 100%;
-        height: auto;
-    }
-
-    .promise-content h2 {
-        font-size: 24px;
-        /* margin-bottom: 18px; */
-        margin: 0px 0px 16px;
-    }
-
-    .promise-content>h3 {
-        font-size: 16px;
-        margin-bottom: 12px;
-        color: #5a5c5d;
-    }
-
-    .promise-content>p {
-        font-size: 16px;
-        color: #5a5c5d;
-        margin-bottom: 25px;
-    }
-
-    .promise-box {
-        padding: 16px;
-        margin: 0px 0px 12px;
-    }
-
-    .promise-box h3 {
-        margin: 0px 0px 4px;
-        color: #1b1d1e;
-        font-size: 23px;
-    }
-
-    .promise-box p {
-        font-size: 16px;
-        color: #5a5c5d;
-    }
-
-    .promise-icon {
-        padding: 8px;
-        height: 40px;
-        width: 45px;
-        border-radius: 4px;
-    }
-
-    .shop-colours-heading h2 {
-        padding-top: 0;
-        text-align: center;
-        margin-bottom: 16px;
-        font-size: 28px;
-        font-weight: 700;
-    }
-
-    .shop-colours-heading p {
-        text-align: center;
-        margin: auto;
-        width: 100%;
-        font-size: 14px;
-        color: #022a68;
-    }
-
-    .colour-list {
-        margin-top: 32px;
-        display: grid;
-        /* display: flex; */
-        grid-template-columns: repeat(4, 1fr);
-        /* flex-wrap: wrap; */
-        align-content: center;
-        /* padding-top: -90px; */
-        gap: 8px;
-    }
-
-    .colour-list .colour-card:last-child {
-        grid-column: 2 / 4;
-        justify-self: center;
-        /* gap: 3px; */
-        /* padding-top: -100px; */
-    }
-
-    .colour-card {
-        width: 30px;
-        height: 30px;
-        margin: 32px 0px 0px;
-        /* padding: 19px; */
-        padding-right: 70px;
-        gap: 8px;
-    }
-
-    .shop-colours-button {
-        background-color: blue;
-        /* width: 600px; */
-        height: 69px;
-        /* padding-top: 25px */
-        margin-top: 50px;
-        margin-left: -15px;
-         margin-right: -15px;
-    }
-
-    .shop-colours-button div {
-        margin-bottom: 24px 0px 0px;
-        width: 1300px;
-        line-height: 8px;
-        /* height: 64px; */
-        /* margin-left: ; */
-        font-weight: 700;
-        padding: 32px;
-
-
-    }
-
-    .colour {
-        width: 56px;
-        height: 56px;
-    }
-
-    .colours {
-        width: 56px;
-        height: 56px;
-    }
-
-    .shop-button {
-        padding-bottom: -20px;
-        /* background-color: black; */
-    }
-
-    .shop-colours {
-        /* background-color: red; */
-        /* padding-bottom: px; */
-    }
-
-    .category-cards {
-        display: flex;
-        flex-direction: column;
-        padding-block: 40px;
-        padding-inline: 24px;
-    }
-
-    .main-hot-product {
-        /* padding-bottom: -0px; */
-    }
-
-    .hot-product-headers-contents {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        align-items: center;
-        padding: 9px;
-        /* left: 150px; */
-        /* background-color:red ; */
-        /* margin-top: -90px; */
-    }
-
-    .product {
-        display: flex;
-        justify-content: center;
-        margin: 32px 40px 32px;
-        /* background-color: red; */
-        line-height: -40px;
-        /* padding-left:900px ; */
-    }
-
-    .inspiration h2 {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1b1d1e;
-        margin: 0px 0px 32px;
-    }
-
-    .inspiration-cards {
-        margin-left: 16px;
-        margin-right: 16px;
-        gap: 12px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 8px;
-    }
-
-    .inspiration-card {
-        flex: 0 0 auto;
-        width: 78%;
-        height: 260px;
-        scroll-snap-align: start;
-    }
-
-    .inspiration-card:last-child {
-        margin-right: 16px;
-    }
-    .colour-quiz {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    margin: 30px 0;
-    border-radius: 0;
-}
-
-.quiz-image img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-}
-
-.quiz-content {
-    width: 100%;
-    max-height: none;
-    height: auto;
-    padding: 24px 20px 28px;
-    border-radius: 0 0 12px 12px;
-}
-
-.quiz-content h2 {
-    font-size: 22px;
-    margin: 0 0 10px;
-}
-
-.quiz-content p {
-    font-size: 15px;
-}
-
-.quiz-content button {
-    margin-top: 24px;
-    width: 100%;
-    padding: 16px 0;
-}
-.help-section{
-    padding-bottom: 0px;
-}
-.store-section,
-.consultation-section {
-    width: 100%;
-    height: -6px;
-    padding-bottom: 70px;
-    /* margin: 0 auto 24px; */
-    border-radius: 12px;
-}
-
-.store-content,
-.consultation-content {
-    top: 50%;
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, -50%);
-    width: 88%;
-    max-width: 88%;
-    padding: 32px 24px ;
-}
-
-.store-content h2,
-.consultation-content h2 {
-    font-size: 22px;
-    color: #1b1d1e;
-    margin: 0px  0px 12px;
-}
-
-.store-content p{
-     font-size: 15px;
-    color: #1b1d1e;
-    
-}
-.consultation-content p {
-    font-size: 15px;
-    color: #1b1d1e;
-    /* line-height: -200px; */
-    /* margin-bottom: 24px; */
-}
-.responsiveness-image{
-    background-image: url(image/find-retail-bg-sm-CTZzZLQf.png);
-    background-size: cover;
-    position: relative;
-    height: 464px;
-    width: 100%;
-    max-width: 81.2rem;
-}
-.responsive-image{
-    background-image: url(image/bookconsultationMobile-Clc8TZQa.png);
-    background-size: cover;
-    position: relative;
-    height: 464px;
-    width: 100%;
-    padding-bottom: 0px;
-    max-width: 91.2rem;
-}
-   .footer{
-/* background: red; */
- margin: 32px 0px;
- /* overflow-y: hidden; */
- background: #ffffff
-   }
-   .footer img{
-    cursor: pointer;
-    object-fit: cover;
-    margin: 0 162px;
-    height: 63.5px;
-    width: 88px;
-    margin: 0;
-   }
-   .social-icons{
-    height: 40px;
-    /* width: 40px; */
-   }
-   .footer p{
-    font-size: 12px;
-    color: #022a68;
-   
-   }
 }
